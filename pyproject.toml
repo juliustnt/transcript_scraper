@@ -1,0 +1,12 @@
+[project]
+name = "ytx"
+version = "0.1.0"
+description = "YouTube Transcript Extractor"
+dependencies = [
+    "yt-dlp",
+    "requests",
+]
+requires-python = ">=3.10"
+
+[project.scripts]
+ytx-transcript = "ytx.cli:main"
