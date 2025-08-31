@@ -3,18 +3,18 @@ from .captions import fetch_transcript
 from .io_utils import save_transcript
 
 def main() -> None:
-    ap = argparse.ArgumentParser(description="YouTube transcript fetcher (yt-dlp based)")
-    ap.add_argument("url", help="YouTube URL or ID")
-    ap.add_argument("mode", nargs="?", default="plain", choices=["plain", "srt"], help="Output format")
-    ap.add_argument("--cookies", dest="cookie_path", help="Path to cookies.txt (Netscape format)")
-    ap.add_argument(
+    argument_parser = argparse.ArgumentParser(description="YouTube transcript fetcher (yt-dlp based)")
+    argument_parser.add_argument("url", help="YouTube URL or ID")
+    argument_parser.add_argument("mode", nargs="?", default="plain", choices=["plain", "srt"], help="Output format")
+    argument_parser.add_argument("--cookies", dest="cookie_path", help="Path to cookies.txt (Netscape format)")
+    argument_parser.add_argument(
         "--browser",
         dest="browser_cookie",
         choices=["edge", "chrome", "firefox", "brave", "vivaldi", "chromium"],
         help="Try cookies from this browser if needed",
     )
-    ap.add_argument("--no-browser-cookies", action="store_true", help="Never attempt browser cookies")
-    args = ap.parse_args()
+    argument_parser.add_argument("--no-browser-cookies", action="store_true", help="Never attempt browser cookies")
+    args = argument_parser.parse_args()
 
     browser_opt = None if args.no_browser_cookies else args.browser_cookie
 
