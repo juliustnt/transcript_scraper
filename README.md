@@ -32,6 +32,7 @@ ytx-transcript <YouTube URL or ID> [plain|srt] [--cookies <cookies.txt>] [--brow
 ### Arguments
 - `<YouTube URL or ID>`: The video to fetch the transcript from
 - `[plain|srt]`: Output format (default: `plain`)
+- `--input <PATH>`: Path to a text file containing multiple YouTube URLs/IDs (one per line). Mutually exclusive with `<YouTube URL or ID>`
 - `--cookies <cookies.txt>`: Path to a cookies.txt file (Netscape format)
 - `--browser <browser>`: Try to use cookies from a browser (`edge`, `chrome`, `firefox`, `brave`, `vivaldi`, `chromium`)
 - `--no-browser-cookies`: Never attempt to use browser cookies
